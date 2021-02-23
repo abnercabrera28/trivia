@@ -1,0 +1,3 @@
+class Trivia::API
+
+end

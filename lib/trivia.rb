@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 require_relative "trivia/version"
+require "pry"
+require "httparty"
 
-module Trivia
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./trivia/api"
+require_relative "./trivia/cli"
+require_relative "./trivia/trivia_info"
+
+Trivia::CLI.new
