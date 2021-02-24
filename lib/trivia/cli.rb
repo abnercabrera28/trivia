@@ -1,4 +1,11 @@
 class Trivia::CLI
-    puts "yo dog"
+    
+    def run
+        cheers
+    end
+
+    def cheers
+        puts "Welcome to The Greatest Trivia Show!!!"
+    end
 
 end
