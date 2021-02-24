@@ -4,8 +4,15 @@ class Trivia::API
 
     def get_trivia
         hash = HTTParty.get(URL)
-        hash["results"]
+        array = hash["results"]
+        self.trivia_objects(array)
         binding.pry
+    end
+
+    def trivia_objects(array)
+        array.each do |hash|
+            Trivia::Info.new(hash)
+        end
     end
 
 end
