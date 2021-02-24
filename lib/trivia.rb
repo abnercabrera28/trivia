@@ -8,4 +8,3 @@ require_relative "./trivia/api"
 require_relative "./trivia/cli"
 require_relative "./trivia/trivia_info"
 
-Trivia::CLI.new
