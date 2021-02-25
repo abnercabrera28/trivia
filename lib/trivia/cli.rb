@@ -4,8 +4,7 @@ class Trivia::CLI
         cheers
         Trivia::API.new.get_trivia
         start
-        question_list
-    
+        
     end
 
     def cheers
@@ -14,8 +13,7 @@ class Trivia::CLI
 
     def start
         puts "Would you like to test your trivia knowledge?"
-        input   
-
+        menu   
     end
 
     def menu
@@ -24,17 +22,24 @@ class Trivia::CLI
             puts "Let's begin!"
             puts " "
             #prints a question
+            
         elsif selection == "n"
             puts "Thanks for playing!"
         else
-            #invalid message
+            invalid
+            menu
+        end
+    end
+
+    def invalid
+        puts "Invalid input! Try again"
     end
 
     def question_list
         empty = []
         empty << Trivia::Info.all
         empty
-        binding.pry
+        
     end
 
     def question
