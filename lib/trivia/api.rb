@@ -6,7 +6,6 @@ class Trivia::API
         hash = HTTParty.get(URL)
         array = hash["results"]
         self.trivia_objects(array)
-        binding.pry
     end
 
     def trivia_objects(array)
