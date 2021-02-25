@@ -14,4 +14,6 @@ class Trivia::Info
         @@all
     end
 
+
+
 end

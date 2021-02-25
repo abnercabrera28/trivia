@@ -14,10 +14,20 @@ class Trivia::CLI
 
     def start
         puts "Would you like to test your trivia knowledge?"
+        input   
 
-        
+    end
 
-
+    def menu
+        selection = input
+        if selection == "y"
+            puts "Let's begin!"
+            puts " "
+            #prints a question
+        elsif selection == "n"
+            puts "Thanks for playing!"
+        else
+            #invalid message
     end
 
     def question_list
@@ -31,7 +41,7 @@ class Trivia::CLI
         #takes one question from list of questions
     end
 
-    def user_input
+    def input
         gets.strip
     end
 
