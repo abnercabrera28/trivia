@@ -5,3 +5,4 @@ require_relative "../lib/trivia"
 Trivia::CLI.new.run
 
 
+
