@@ -16,7 +16,7 @@ class Trivia::Info
 
     def self.question_list
         self.all.each do |subject|
-            puts "#{subject.question}"
+            puts HTMLEntities.new.decode "#{subject.question}"
         end
     end
 
