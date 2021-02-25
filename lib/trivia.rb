@@ -3,6 +3,7 @@
 require_relative "trivia/version"
 require "pry"
 require "httparty"
+require "htmlentities"
 
 require_relative "./trivia/api"
 require_relative "./trivia/cli"
