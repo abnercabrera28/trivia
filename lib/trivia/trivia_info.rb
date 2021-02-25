@@ -14,6 +14,17 @@ class Trivia::Info
         @@all
     end
 
+    def self.question_list
+        self.all.each do |subject|
+            puts "#{subject.question}"
+        end
+    end
+
+    def questions
+        puts self.question
+        binding.pry
+    end
+
 
 
 end
