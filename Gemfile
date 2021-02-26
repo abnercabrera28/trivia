@@ -9,3 +9,5 @@ gem "rake", "~> 13.0"
 gem "pry"
 gem "httparty"
 gem "htmlentities"
+gem "tty-prompt"
+
