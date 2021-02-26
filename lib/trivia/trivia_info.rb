@@ -15,15 +15,12 @@ class Trivia::Info
     end
 
     def self.question_list
-        self.all.map do |subject|
-            HTMLEntities.new.decode "#{subject.question}"
+        self.all.map.with_index(1) do |subject, index|
+            HTMLEntities.new.decode "#{index}. #{subject.question}" ##{subject.correct_answer} #{subject.incorrect_answers.join}"
         end
+        #currently an array of strings/you want an array of arrays(?)
     end
 
-    def self.one_question
-        puts self.question_list.sample
-    end
-
-
+    #self.all[27].correct_answer
 
 end
