@@ -3,9 +3,7 @@ class Trivia::CLI
     def run
         cheers
         Trivia::API.new.get_trivia
-        start
-        
-        
+        start   
     end
 
     def cheers
@@ -13,7 +11,7 @@ class Trivia::CLI
     end
 
     def start
-        puts "Would you like to test your trivia knowledge?"
+        puts "Would you like to test your trivia knowledge? (y/n)"
         menu   
     end
 
@@ -22,8 +20,8 @@ class Trivia::CLI
         if selection == "y"
             puts "Let's begin!"
             puts " "
-            Trivia::Info.one_question
-            binding.pry
+            one_question
+            #binding.pry
         elsif selection == "n"
             puts "Thanks for playing!"
         else
@@ -32,12 +30,37 @@ class Trivia::CLI
         end
     end
 
-    def invalid
-        puts "Invalid input! Try again"
+    def one_question
+        Trivia::Info.all.each do |object|    
+            puts HTMLEntities.new.decode object.question
+        selection = input
+        if selection == object.correct_answer
+            puts "Correct!"
+            continue
+        else 
+            puts "No, it's #{object.correct_answer}!"
+            continue
+        end
+        
+    end
     end
 
-    def question
-        #takes one question from list of questions
+    def continue
+        puts "Continue?"
+        selection = input
+        if selection == "y"
+        
+        else 
+            exit
+        end
+
+    end
+
+    
+    
+
+    def invalid
+        puts "Invalid input! Try again"
     end
 
     def input
