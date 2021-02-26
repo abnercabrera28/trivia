@@ -15,14 +15,13 @@ class Trivia::Info
     end
 
     def self.question_list
-        self.all.each do |subject|
-            puts HTMLEntities.new.decode "#{subject.question}"
+        self.all.map do |subject|
+            HTMLEntities.new.decode "#{subject.question}"
         end
     end
 
-    def questions
-        puts self.question
-        binding.pry
+    def self.one_question
+        puts self.question_list.sample
     end
 
 
