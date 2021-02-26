@@ -5,8 +5,7 @@ class Trivia::API
     def get_trivia
         hash = HTTParty.get(URL)
         array = hash["results"]
-        self.trivia_objects(array)
-        
+        self.trivia_objects(array) 
     end
 
     def trivia_objects(array)
