@@ -3,9 +3,8 @@ class Trivia::CLI
     def run
         cheers
         Trivia::API.new.get_trivia
-        
         start
-        binding.pry
+        
         
     end
 
@@ -23,8 +22,8 @@ class Trivia::CLI
         if selection == "y"
             puts "Let's begin!"
             puts " "
-            Trivia::Info.question_list
-            
+            Trivia::Info.one_question
+            binding.pry
         elsif selection == "n"
             puts "Thanks for playing!"
         else
@@ -36,8 +35,6 @@ class Trivia::CLI
     def invalid
         puts "Invalid input! Try again"
     end
-
-
 
     def question
         #takes one question from list of questions
