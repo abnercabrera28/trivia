@@ -14,15 +14,4 @@ class Trivia::Info
         @@all
     end
 
-    def self.question_list
-        self.all.map do |object|
-            HTMLEntities.new.decode "#{object.category}"
-        end
-    end
-
-    def self.pushed
-        puts self.question_list.uniq
-        
-    end
-
 end
