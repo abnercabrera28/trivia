@@ -5,7 +5,7 @@ require_relative "lib/trivia/version"
 Gem::Specification.new do |spec|
   spec.name          = "trivia"
   spec.version       = Trivia::VERSION
-  spec.authors       = ["Abner"]
+  spec.authors       = ["Abner Cabrera"]
   spec.email         = ["abnercabrera28@gmail.com"]
 
   spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
