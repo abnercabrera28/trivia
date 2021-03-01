@@ -3,6 +3,8 @@ class Trivia::API
     URL = "https://opentdb.com/api.php?amount=50&type=boolean"
 
     def get_trivia
+        puts "-----------------_________________--------------GRABBED DATA--------------_____________---------------"
+
         hash = HTTParty.get(URL)
         array = hash["results"]
         self.trivia_objects(array) 
