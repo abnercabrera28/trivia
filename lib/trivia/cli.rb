@@ -67,8 +67,4 @@ class Trivia::CLI
         exit
     end
 
-    def cats
-        
-    end
-
 end
